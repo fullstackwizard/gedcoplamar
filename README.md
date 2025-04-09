@@ -1,53 +1,61 @@
-# GEDCoplamar
+# 📂 GEDCoplamar
 
-Sistema simples de gerenciamento de documentos para clientes e administradores.
+Sistema simples de gerenciamento eletrônico de documentos (GED), desenvolvido para uso interno da Coplamar.
 
-## 🧱 Stack Utilizada
+---
+
+## 🚀 Stack Utilizada
 
 - **Frontend:** Next.js (React + TypeScript)
 - **Backend:** Node.js + Express + TypeScript
 - **Banco de Dados:** MySQL
-- **Gerenciamento de Estado:** (Redux Toolkit ou Context API)
-- **ORM:** Prisma
-- **Autenticação:** JWT
+- **ORM:** Prisma (futuramente)
+- **Autenticação:** JWT (futuramente)
+- **Gerenciamento de Estado:** Redux Toolkit ou Context API
 - **Ambiente:** Docker + Docker Compose
+- **Versionamento:** Git + GitHub
 
 ---
 
-## 🚀 Como rodar o projeto localmente (usando Docker)
+## 🧪 Pré-requisitos
 
-### Pré-requisitos
-
-- Docker instalado
-- Docker Compose instalado
-- Git instalado
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [Git](https://git-scm.com/)
 
 ---
 
-### 🔧 Passos
+## 🛠️ Como rodar o projeto com Docker
 
-1. Clone o repositório
+### 1. Clone o repositório
 
-````bash
+```bash
 git clone https://github.com/seu-usuario/gedcoplamar.git
 cd gedcoplamar
 
-Crie o arquivo .env com base no .env.example
+cp backend/.env.example backend/.env
 
-Suba os containers com Docker Compose:
-
-```bash
 docker-compose up --build
-Acesse a API:
+Esse comando vai iniciar:
+Backend em http://localhost:3001
+Banco de dados MySQL na porta 3306
 
-arduino
-http://localhost:3001
-Quando o frontend estiver pronto:
 
-arduino
-http://localhost:3000
 
-````
+gedcoplamar/
+├── backend/
+│   ├── src/
+│   │   └── index.ts
+│   ├── Dockerfile
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── .env / .env.example
+├── frontend/ (em breve)
+├── docker-compose.yml
+└── README.md
+
+npm run dev     # roda o servidor com ts-node-dev
 
 👨‍💻 Autor
-Flávio Ribeiro - @flavioribeiro
+Desenvolvido por Flávio Ribeiro
+```
