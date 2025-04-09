@@ -1,14 +1,17 @@
 import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import routes from "./routes";
+
+dotenv.config(); // Carrega as variáveis do .env
 
 const app = express();
-const port = process.env.PORT || 5000;
+app.use(cors()); // Permite conexões de outros domínios
+app.use(express.json()); // Permite receber JSON nas requisições
 
-app.use(express.json());
+app.use("/api", routes); // Todas as rotas começam com /api
 
-app.get("/", (req, res) => {
-  res.send("GED Coplamar API rodando 🚀");
-});
-
-app.listen(port, () => {
-  console.log(`Servidor rodando na porta ${port}`);
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
 });

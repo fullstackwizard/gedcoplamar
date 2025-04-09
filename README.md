@@ -59,3 +59,9 @@ npm run dev     # roda o servidor com ts-node-dev
 👨‍💻 Autor
 Desenvolvido por Flávio Ribeiro
 ```
+
+---
+
+docker compose run backend npm install dotenv
+docker compose exec backend npm install cors
+dentro do cd Backend
